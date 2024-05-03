@@ -1,5 +1,8 @@
 /**
- * The Playlist class holds a collection of songs and provide methods to manage those songs within the playlist.
+ * The Playlist class represents a playlist containing a collection of songs.
+ * Each playlist has a name, a list of songs, and a total duration.
+ * Songs can be added to or removed from the playlist.
+ * The playlist can also display its contents and search for a song by title.
  */
 
 import java.util.LinkedList;
@@ -20,30 +23,28 @@ public class Playlist {
         this.head = null;
     }
 
-    // Method to add a song to the playlist
+    /**
+     * Implement method to add a song to the playlist
+     * 1. Create a new SongNode object with the provided song
+     * 2. If the playlist is empty (head is null), set the new node as the head
+     * 3. Otherwise, traverse to the last node in the playlist
+     * 4. Link the new node to the last node
+     * 5. Update the total duration of the playlist by adding the duration of the provided song
+     * 6. Increment the count of songs in the playlist
+     */
     public void addSong(Song song) {
-        SongNode newNode = new SongNode(song); // Create a new SongNode with the given song
-        if (head == null) {
-            head = newNode; // If the playlist is empty, set the new node as the head
-        } else {
-            SongNode current = head;
-            while (current.getNext() != null) {
-                current = current.getNext(); // Traverse to the last node in the playlist
-            }
-            current.setNext(newNode); // Link the new node to the last node
-        }
-
-        totalDuration += song.getDuration(); // Update total duration
-        numberOfSongs++; // Increment the count of songs
+        // Write your code here
     }
 
-    // Method to remove a song from the playlist
+    /**
+     * Implement method to remove a song from the playlist
+     * 1. Check if the given song is present in the list of songs
+     * 2. Remove the song
+     * 3. Update the total duration of the playlist
+     * 4. Decrement the count of songs
+      */
     public void removeSong(Song song) {
-        if (songs.contains(song)) {
-            songs.remove(song);
-            totalDuration -= song.getDuration();
-            numberOfSongs--; // Decrement the count of songs
-        }
+        // Write your code here
     }
 
     // Method to get all songs on the playlist
@@ -72,13 +73,15 @@ public class Playlist {
         }
     }
 
-    // Method to find a song by its title
+    /**
+     * Implement method to find a song by its title
+     * 1. Iterate through the linked list of songs in the playlist
+     * 2. Start from the head of the playlist and traverse until reaching the end of the list
+     *      i. At each iteration, check if the title of the current song matches the given songTitle
+     *      ii. If a match is found, return the song
+     * 3. If no match is found after traversing the entire list, return null to indicate that the song was not found
+      */
     public Song findSongByTitle(String songTitle) {
-        for (SongNode current = head; current != null; current = current.getNext()) {
-            if (current.getSong().getTitle().equals(songTitle)) {
-                return current.getSong();
-            }
-        }
-        return null; // Song not found
+        // Write your code here
     }
 }
