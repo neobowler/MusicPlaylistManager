@@ -76,7 +76,7 @@ public class Playlist {
     /**
      * Implement method to find a song by its title
      * 1. Iterate through the linked list of songs in the playlist
-     * 2. Start from the head of the playlist and traverse until reaching the end of the list
+     * 2. Start from the beginning of the playlist and traverse until you reach the end of the list
      *      i. At each iteration, check if the title of the current song matches the given songTitle
      *      ii. If a match is found, return the song
      * 3. If no match is found after traversing the entire list, return null to indicate that the song was not found
